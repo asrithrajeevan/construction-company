@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add this within the <head> section -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJop+br/Z9gM5t9nX4ld7F81I3XIqDj" crossorigin="anonymous">
+
+    <title>{% block title %}{% endblock%}</title>
+    <script src=
+    "https://kit.fontawesome.com/457a315592.js"
+            crossorigin="anonymous">
+        </script>
+    <style>
+        #navigation-text{
+            font-weight: 600
+        }
+        #footer-container{
+            background-color: #292929;
+        }
+        .input-fields{
+            background-color: #333;
+            padding-bottom: 10px;
+        }
+        .btn{
+            border-width: 2px;
+            border-color: #000;
+            background-color: rgb(0, 0, 0);
+            display: block;
+            padding: 5px;
+            color:  rgb(255, 102, 0);
+            margin: 10px 0 0;
+            width:100%;
+            font-size: 13px;
+            border-radius: 2px
+            }.btn:hover{
+            background-color:  rgb(255, 102, 0);
+            color: #000;
+            border-color: #000;
+        }
+        .ex4 i {
+            transition: all 600ms cubic-bezier(.99, 0, .57, .94);
+            transform: rotate(0deg); /* Initial transform value */
+        }
+
+        .ex4 i:hover {
+            color: #ff5f02;
+            transform: rotate(360deg);
+        }
+        .rotate{
+            width:80px;
+            height:80px;
+            animation: rotation infinite 3s linear;
+            z-index: 1;
+        }
+
+        @keyframes rotation{
+        from{
+            transform:rotate(0deg);
+        }
+        
+        to{
+            transform:rotate(360deg);
+        }
+        }
+
+
+        .link:hover{
+            text-decoration: none;
+            color: #000;
+        }
+
+        /*===================*/
+        /* PULSE GROW
+        /*===================*/
+
+        @-webkit-keyframes pulse-grow-on-hover {
+        to {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        }
+        @keyframes pulse-grow-on-hover {
+        to {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        }
+        .pulse-grow-on-hover {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        }
+        .pulse-grow-on-hover:hover, .pulse-grow-on-hover:focus, .pulse-grow-on-hover:active {
+        -webkit-animation-name: pulse-grow-on-hover;
+        animation-name: pulse-grow-on-hover;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        }
+        #icon-white{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-color-top navbar-fixed-top fixed-top py-0">
+        <div class="container">
+            <!-- First Section of Header -->
+            <div class="navbar-header">
+                <div class="d-flex align-items-center">
+                    <span class="ml-3">Email: info@example.com</span>
+                    <span class="ml-3">Phone: +1234567890</span>
+                </div>
+            </div>
+            <!-- Second Section of Header -->
+            <div class="collapse navbar-collapse ml-2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ml-3"><a class="nav-link" href="#">FAQ</a></li>
+                    <li class="nav-item ml-3"><a class="nav-link" href="#">Help Desk</a></li>
+                    <li class="nav-item ml-3"><a class="nav-link" href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Second Header Section -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-Bottom">
+        <div class="container py-4">
+            <!-- Left Section of Second Header -->
+            <div class="navbar-header">
+                <span class="navbar-brand" id="logo-style">CEBA BUILDERS</span>
+            </div>
+            <!-- Right Section of Second Header -->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link " id="navigation-text" href={% url 'home' %}>Home</a></li>
+                    <li class="nav-item"><a class="nav-link "id="navigation-text" href={% url 'about' %}>About Us</a></li>
+                    <!-- Dropdown for Service -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " id="navigation-text" href="#" id="serviceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="serviceDropdown">
+                            <a class="dropdown-item" href="#">Interior Design</a>
+                            <a class="dropdown-item" href="#">Home Renovation</a>
+                            <a class="dropdown-item" href="#">Plan</a>
+                            <a class="dropdown-item" href="#">3D Modeling</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link " id="navigation-text" href="#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link " id="navigation-text" href="#">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link " id="navigation-text" href={% url 'contact' %}>Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- for responsive button -->
+            <button class="navbar-toggler" id="collapse-botton" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+    
+
+    {% block content %}{% endblock %}
+
+      
+    <!-- <div class="footer">
+        <p class="ml-3">&copy; 2023 Your Construction Company. All rights reserved.</p>
+    </div> -->
+
+    <div class="mb-3 mr-3 rotate" style="position: fixed; bottom: 15px; right: 15px;">
+        <a href="https://wa.me/8590406845" target="_blank" class="link link-four pulse-grow-on-hover"><img src="{% static 'images/whatsapp.png' %}" style="max-width: 100%; height: auto;" alt="whatsapp"></a>
+    </div>
+
+   <section>
+    <footer class="pt-3 pb-1 text-light mt-5" id="footer-container">
+        <div class="container" style="text-align: center;"> 
+            <div class="ex4">
+                <a id="icon-white" target="_blank" href=""><i class="fa fa-twitter fa-2x ml-4" aria-hidden="true"></i></a>
+                <a id="icon-white" target="_blank" href=""><i class="fa fa-instagram fa-2x ml-4" aria-hidden="true"></i></i></a>
+                <a id="icon-white" target="_blank" href=""><i class="fa fa-whatsapp fa-2x ml-4" aria-hidden="true"></i></i></a>
+                <a id="icon-white" target="_blank" href="https://maps.app.goo.gl/T2gMMkoRYya7NLMt8"> <i class="fa fa-location-arrow fa-2x ml-4" aria-hidden="true"></i></a>
+              </div>
+        </div>
+        <div class="container mb-5 mt-4">
+            <div class="row align-items-center">
+                <div class="col-md-3 mb-mt-3">
+                    <div class="container" style="height: 300px; background-color: #00ff08;">
+                        <!-- Content for the second column -->
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-mt-3">
+                    <div class="container" style="height: 300px; background-color: #00ff08;">
+                        <!-- Content for the second column -->
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-mt-3">
+                    <div class="container" style="height: 300px; background-color: #676da5;">
+                        <!-- Content for the third column -->
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-mt-3">
+                    <div class="container" style="height: 300px; background-color: #00ff08;">
+                        <!-- Content for the second column -->
+                    </div>
+                </div>
+                <div class="container">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+    <!-- Bootstrap and jQuery Scripts (Add them at the end of the body for better performance) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+<!-- 
+<div class="lds-ripple"><div></div><div></div></div> -->
+
+
+</html>

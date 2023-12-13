@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+.parallax {
+  /* The image used */
+  background-image: url("../static/images/aboutUS.png");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.indented-paragraph {
+    text-indent: 80px; /* Adjust the value as needed */
+}
+
+section {
+    overflow: hidden;
+    position: relative;
+}
+
+.news-container {
+    display: flex;
+    animation: scrollNews 20s linear infinite; /* Adjust the duration as needed */
+}
+
+.news-item {
+    flex: 0 0 auto;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 1px;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    margin-right: -5%;
+}
+
+@keyframes scrollNews {
+    0% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+}
+
+</style>
+
+    <div class="container-about parallax">
+        <div class="centered">About US</div>
+    </div>
+
+    <!-- About -->
+        <!-- Introduction Section -->
+        <div class="row mt-5 mx-5">
+            <div class="col-md-8">
+                <h2 style="font-weight: 700; display: inline;">ABOUT <span style="color: orangered;">CEBA BUILDERS & DEVELOPERS</span></h2>
+                <p class="indented-paragraph mt-2">
+                    Welcome to Our Construction Company, where quality meets craftsmanship. With a rich history of 
+                    excellence spanning over [number of years], we have established ourselves as a leading force in the construction industry.
+                    We are dedicated to delivering high-quality construction services that meet your needs. 
+                    With years of experience, we take pride in our commitment to excellence and customer satisfaction.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/about_image_1.jpg' %}" alt="intro-image1" style="width:100%; height: 100%; margin-right: 10%;">
+            </div>
+        </div>
+
+        <!-- Latest Work -->
+
+            <div class="container mb-4" style="text-align: center;"> 
+                <h4 class="mt-5" style="font-weight: 700; ">Latest Work</h4>
+
+                <!-- <div class="row mt-5" style="justify-content: space-between;">
+                    <img src="{% static 'images/home-intro-1.jpg' %}" alt="intro-image1" style="width:40%; height: 45%;">
+    
+                </div> -->
+            </div>
+
+            <section>
+                <div class="news-container">
+                  <!-- Add your news items here -->
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 1"></div>
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 2"></div>
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 4"></div>
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 5"></div>
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 6"></div>
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 7"></div>
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 8"></div>
+                  <div class="news-item"><img src="{% static 'images/home-intro-1.jpg' %}" width="80%" alt="News Image 9"></div>
+                  <!-- Add more news items as needed -->
+                </div>
+              </section>
+
+<!-- 
+    <div class="container-about">
+        <img src="{% static 'images/AboutUS.png' %}" alt="About" style="width:100%;">
+        <div class="centered">About US</div>
+    </div> -->
+{% endblock %}
