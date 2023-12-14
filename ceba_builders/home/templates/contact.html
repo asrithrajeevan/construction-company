@@ -27,6 +27,7 @@
     <div class="col-md-8">
       <h2 style="font-weight: 700;">Talk with Us</h2>
       <form action="#" method="post">
+        {% csrf_token %}
         <div class="form-group">
           <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
         </div>
@@ -38,7 +39,7 @@
             <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject" required>
           </div>
           <div class="form-group col-md-6">
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+            <input type="tel" class="form-control" id="phone" name="phone"  placeholder="Phone Number" required>
           </div>
         </div>
         <div class="form-group">

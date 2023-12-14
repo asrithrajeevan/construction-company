@@ -61,8 +61,8 @@ body {
 }
 
 #collapse-botton{
-    background-color: rgb(255, 102, 0);
-    size: 5px;
+    background-color: rgb(0, 0, 0);
+    size: 4px;
 }
 
 /* for banner style */
@@ -313,19 +313,172 @@ to {
   color: white;
 }
 
-/* 
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: transparent;
-  border: none;
+#shadow{
+  -webkit-box-shadow:0px 0px 17px 1px rgba(148,148,148,1);
+  -moz-box-shadow: 0px 0px 17px 1px rgba(148,148,148,1);
+  box-shadow: 0px 0px 17px 1px rgba(148,148,148,1);
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: transparent;
+#navigation-text{
+  font-weight: 600
+}
+#footer-container{
+  background-color: #292929;
+}
+.input-fields{
+  background-color: #333;
+  padding-bottom: 10px;
+}
+.btn{
+  border-width: 2px;
+  border-color: #000;
+  background-color: rgb(0, 0, 0);
+  display: block;
+  padding: 5px;
+  color:  rgb(255, 102, 0);
+  margin: 10px 0 0;
+  width:100%;
+  font-size: 13px;
+  border-radius: 2px
+  }.btn:hover{
+  background-color:  rgb(255, 102, 0);
+  color: #000;
+  border-color: #000;
+}
+.ex4 i {
+  transition: all 600ms cubic-bezier(.99, 0, .57, .94);
+  transform: rotate(0deg); /* Initial transform value */
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-} */
+.ex4 i:hover {
+  color: #ff5f02;
+  transform: rotate(360deg);
+}
+.rotate{
+  width:80px;
+  height:80px;
+  animation: rotation infinite 3s linear;
+  z-index: 1;
+}
+
+@keyframes rotation{
+from{
+  transform:rotate(0deg);
+}
+
+to{
+  transform:rotate(360deg);
+}
+}
+
+
+.link:hover{
+  text-decoration: none;
+  color: #000;
+}
+
+/*===================*/
+/* PULSE GROW
+/*===================*/
+
+@-webkit-keyframes pulse-grow-on-hover {
+to {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+}
+@keyframes pulse-grow-on-hover {
+to {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+}
+.pulse-grow-on-hover {
+display: inline-block;
+vertical-align: middle;
+-webkit-transform: perspective(1px) translateZ(0);
+transform: perspective(1px) translateZ(0);
+box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.pulse-grow-on-hover:hover, .pulse-grow-on-hover:focus, .pulse-grow-on-hover:active {
+-webkit-animation-name: pulse-grow-on-hover;
+animation-name: pulse-grow-on-hover;
+-webkit-animation-duration: 0.3s;
+animation-duration: 0.3s;
+-webkit-animation-timing-function: linear;
+animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+animation-iteration-count: infinite;
+-webkit-animation-direction: alternate;
+animation-direction: alternate;
+}
+#icon-white{
+  color: white;
+}
+
+#top-padding {
+  margin-top: -3%;
+}
+
+
+.parallax {
+  /* The image used */
+  background-image: url("../static/images/aboutUS.png");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.indented-paragraph {
+    text-indent: 80px; /* Adjust the value as needed */
+}
+
+section {
+    overflow: hidden;
+    position: relative;
+}
+
+.news-container {
+    display: flex;
+    animation: scrollNews 20s linear infinite; /* Adjust the duration as needed */
+}
+
+.news-item {
+    flex: 0 0 auto;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 1px;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    margin-right: -5%;
+}
+
+@keyframes scrollNews {
+    0% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+}
+
+.parallax {
+  background-image: url("../static/images/aboutUS.png");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.indented-paragraph {
+  text-indent: 80px; /* Adjust the value as needed */
+}
+
+
+
